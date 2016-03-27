@@ -7,7 +7,7 @@ var app = express();
 
 app.use(express.static('public'));
 app.use('/static', express.static('dist'));
-app.use('/public/images/icons', express.static('public')express.static('node_modules/govuk_frontend_toolkit/images'));
+app.use('/public', express.static('public'));
 
 
 app.get('/proxy.json', function(req,res) {

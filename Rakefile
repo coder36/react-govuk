@@ -6,7 +6,7 @@ namespace "heroku" do
 
   desc "deploy to heroku"
   task :deploy => :build do
-    root = "/tmp/react_slides_tmp"
+    root = "/tmp/react_govuk_tmp"
 
     system(<<-SCRIPT)
       rm -rf #{root}
@@ -14,7 +14,7 @@ namespace "heroku" do
       mkdir #{root}/images/icons
       cp -r ./dist #{root}
       cp -r ./public #{root}
-      cp -r node_modules/govuk_frontend_toolkit/images #{root}/images/icons 
+      cp -r node_modules/govuk_frontend_toolkit/images #{root}/images/icons
       cp index.html #{root}
       cp package.json #{root}
       cp Procfile #{root}
@@ -23,9 +23,9 @@ namespace "heroku" do
       git init
       git add .
       git commit -m"heroku build"
-      echo "hi poggie!"
+      echo "hi markymark!"
       heroku login
-      git remote add heroku https://git.heroku.com/ancient-basin-7920.git
+      git remote add heroku https://git.heroku.com/quiet-coast-92855.git
       git push --force heroku master
     SCRIPT
   end
